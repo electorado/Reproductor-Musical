@@ -24,8 +24,7 @@ class SongActivity : AppCompatActivity() {
         val btnPause = findViewById<ImageButton>(R.id.btnPause)
         val btnStop = findViewById<ImageButton>(R.id.btnStop)
 
-        val rawId = intent.getIntExtra("rawId", -1)
-        val uriString = intent.getStringExtra("uri")
+        songId = intent.getIntExtra("song", 0)
         val titulo = intent.getStringExtra("titulo") ?: "Canción"
         val imagen = intent.getIntExtra("imagen", 0)
 

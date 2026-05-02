@@ -14,7 +14,7 @@ class ListActivity : AppCompatActivity() {
         val recycler = findViewById<RecyclerView>(R.id.recyclerSongs)
         recycler.layoutManager = LinearLayoutManager(this)
 
-        val lista = mutableListOf(
+        val lista = listOf(
             Song("Bilal - Levels (Live @ KEXP)",
                 R.drawable.bilal,
                 R.raw.bilal_levels_live_kexp),
@@ -37,15 +37,9 @@ class ListActivity : AppCompatActivity() {
 
         val adapter = SongAdapter(lista) { song ->
             val intent = Intent(this, SongActivity::class.java)
+            intent.putExtra("song", song.song)
             intent.putExtra("titulo", song.titulo)
             intent.putExtra("imagen", song.imagen)
-            song.rawId?.let {
-                intent.putExtra("rawId", it)
-            }
-
-            song.uri?.let {
-                intent.putExtra("uri", it)
-            }
             startActivity(intent)
         }
 
