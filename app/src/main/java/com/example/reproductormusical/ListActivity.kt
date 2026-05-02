@@ -38,6 +38,7 @@ class ListActivity : AppCompatActivity() {
         val adapter = SongAdapter(lista) { song ->
             val intent = Intent(this, SongActivity::class.java)
             intent.putExtra("song", song.song)
+            intent.putExtra("titulo", song.titulo)
             startActivity(intent)
         }
 

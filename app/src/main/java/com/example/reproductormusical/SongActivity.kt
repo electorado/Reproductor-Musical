@@ -21,7 +21,7 @@ class SongActivity : AppCompatActivity() {
         val btnPause = findViewById<Button>(R.id.btnPause)
         val btnStop = findViewById<Button>(R.id.btnStop)
 
-        songId = intent.getIntExtra("songId", 0)
+        songId = intent.getIntExtra("song", 0)
         val titulo = intent.getStringExtra("titulo") ?: "Canción"
 
         txtTitulo.text = titulo
