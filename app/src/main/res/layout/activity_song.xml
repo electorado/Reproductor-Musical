@@ -6,35 +6,65 @@
     android:padding="24dp"
     android:gravity="center_horizontal">
 
+    <ImageView
+        android:id="@+id/imgSong"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:adjustViewBounds="true"
+        android:layout_marginBottom="20dp"
+        android:scaleType="centerCrop" />
+
     <TextView
         android:id="@+id/txtTitulo"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="Nombre de la canción"
-        android:textSize="24sp"
+        android:textSize="34sp"
         android:textStyle="bold"
         android:layout_marginTop="32dp"
         android:layout_marginBottom="40dp" />
 
-    <Button
-        android:id="@+id/btnPlay"
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="Play"
-        android:layout_marginBottom="16dp" />
+    android:orientation="horizontal"
+    android:gravity="center">
 
-    <Button
-        android:id="@+id/btnPause"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Pause"
-        android:layout_marginBottom="16dp" />
+        <ImageButton
+            android:id="@+id/btnPlay"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/play"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:contentDescription="Play"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
 
-    <Button
-        android:id="@+id/btnStop"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Stop"
-        android:layout_marginBottom="16dp" />
+        <ImageButton
+            android:id="@+id/btnPause"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/pause"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:contentDescription="Pause"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
 
+        <ImageButton
+            android:id="@+id/btnStop"
+            android:layout_width="100dp"
+            android:layout_height="100dp"
+            android:layout_marginEnd="16dp"
+            android:src="@drawable/stop"
+            android:padding="0dp"
+            android:scaleType="fitCenter"
+            android:adjustViewBounds="true"
+            android:contentDescription="Stop"
+            android:background="?attr/selectableItemBackgroundBorderless"/>
+
+    </LinearLayout>
 </LinearLayout>

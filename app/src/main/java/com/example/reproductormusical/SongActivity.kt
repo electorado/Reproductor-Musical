@@ -4,6 +4,8 @@ import android.media.MediaPlayer
 import android.net.Uri
 import android.os.Bundle
 import android.widget.Button
+import android.widget.ImageButton
+import android.widget.ImageView
 import android.widget.TextView
 import androidx.appcompat.app.AppCompatActivity
 
@@ -17,14 +19,18 @@ class SongActivity : AppCompatActivity() {
         setContentView(R.layout.activity_song)
 
         val txtTitulo = findViewById<TextView>(R.id.txtTitulo)
-        val btnPlay = findViewById<Button>(R.id.btnPlay)
-        val btnPause = findViewById<Button>(R.id.btnPause)
-        val btnStop = findViewById<Button>(R.id.btnStop)
+        val imgSong = findViewById<ImageView>(R.id.imgSong)
+        val btnPlay = findViewById<ImageButton>(R.id.btnPlay)
+        val btnPause = findViewById<ImageButton>(R.id.btnPause)
+        val btnStop = findViewById<ImageButton>(R.id.btnStop)
 
-        songId = intent.getIntExtra("song", 0)
+        val rawId = intent.getIntExtra("rawId", -1)
+        val uriString = intent.getStringExtra("uri")
         val titulo = intent.getStringExtra("titulo") ?: "Canción"
+        val imagen = intent.getIntExtra("imagen", 0)
 
         txtTitulo.text = titulo
+        imgSong.setImageResource(imagen)
 
         val uri = Uri.parse("android.resource://$packageName/$songId")
 
