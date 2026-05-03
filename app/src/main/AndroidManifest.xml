@@ -11,6 +11,8 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.ReproductorMusical">
+        <activity android:name="com.example.reproductormusical.AddSongActivity"
+            android:exported="false" />
         <activity android:name="com.example.reproductormusical.SongActivity"
             android:exported="false" />
         <activity android:name="com.example.reproductormusical.ListActivity"

@@ -3,18 +3,21 @@ package com.example.reproductormusical
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 
 class SongAdapter(
     private val songs: List<Song>,
-    private val onClick: (Song) -> Unit
+    private val onClick: (Song) -> Unit,
+    private val onDeleteClick: (Int) -> Unit
 ) : RecyclerView.Adapter<SongAdapter.ViewHolder>() {
 
     class ViewHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
         val txtTitulo: TextView = itemView.findViewById(R.id.txtTitulo)
         val imgSong: ImageView = itemView.findViewById(R.id.imgSong)
+        val btnDelete: Button = itemView.findViewById(R.id.btnDelete)
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): ViewHolder {
@@ -32,6 +35,13 @@ class SongAdapter(
 
         holder.itemView.setOnClickListener {
             onClick(song)
+        }
+
+        holder.btnDelete.setOnClickListener {
+            val position = holder.bindingAdapterPosition
+            if (position != RecyclerView.NO_POSITION) {
+                onDeleteClick(position)
+            }
         }
     }
 
